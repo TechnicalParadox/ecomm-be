@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@work.github.com:coding-boot-camp/module-13-challenge-orm.git"
+    "url": "git@github.com:TechnicalParadox/ecomm-be.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Giamo Lao",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.3"
