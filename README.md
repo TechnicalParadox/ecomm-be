@@ -35,7 +35,7 @@ DEFAULT_PORT='<default port (3001)>'
 ### API routes:
 *JSON Format*
 
-**/categories**
+**/api/categories**
 
 *GET* - Get all categories and their products with their linked tags.
 
@@ -49,7 +49,7 @@ DEFAULT_PORT='<default port (3001)>'
 
   *DELETE* - Delete a category by ID.
 
-**/products**
+**/api/products**
 
 *GET* - Get all products with their categories and linked tags.
 
@@ -63,7 +63,7 @@ DEFAULT_PORT='<default port (3001)>'
 
   *DELETE* - Delete a product by ID.
 
-**/tags**
+**/api/tags**
 
 *GET* - Get all tags and their `tagged_products` which contain product info/product category and the `product_tag` that links the tag to a product.
 
