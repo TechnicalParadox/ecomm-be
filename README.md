@@ -22,7 +22,7 @@ DB_PW='<password>'
 RESET_DB='<0 for false, 1 to reset database on server start>'
 DEFAULT_PORT='<default port (3001)>'
 ```
-4. Create your database with `mysql SOURCE <path-to-installation>/db/schema.sql`
+4. Create your database in MySQL with `SOURCE <path-to-installation>/db/schema.sql`
 5. (Optional) Seed your database by running 'npm run seed'
 6. Run 'npm start' to launch your server
 ## Usage
