@@ -15,6 +15,7 @@ This project does not currently use a license.
 1. Download the files and extract to installation folder
 2. Run 'npm install'
 3. Setup your '.env' file in installation directory to contain the following
+
 `<installation_directory>/.env`
 ```
 DB_NAME='<name of database>'
