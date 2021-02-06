@@ -25,6 +25,7 @@ RESET_DB='<0 for false, 1 to reset database on server start>'
 DEFAULT_PORT='<default port (3001)>'
 ```
 4. Create your database in MySQL with `SOURCE <path-to-installation>/db/schema.sql`
+*make sure `<install>/db/schema.sql` uses the correct database name or manually create database in MySQL CLI with DROP/CREATE commands*
 5. (Optional) Seed your database by running 'npm run seed'
 6. Run 'npm start' to launch your server
 ## Usage
@@ -57,7 +58,7 @@ DEFAULT_PORT='<default port (3001)>'
   *PUT* - With body containing new values to update a product.
 
   *DELETE* - Delete a product by ID.
-  
+
 **/tags**
 
 *GET* - Get all tags and their `tagged_products` which contain product info/product category and the `product_tag` that links the tag to a product.
@@ -69,7 +70,7 @@ DEFAULT_PORT='<default port (3001)>'
   *GET* - Get a tag with it's `tagged_products` which contain product info/product category and the `product_tag` that links the tag to a product.
 
   *POST* - With body containing new `tag_name` to update a tag by ID.
-  
+
   *DELETE* - Delete a tag by ID.
 
 ![Insomnia Core set up to make requests to the API](README.PNG)
