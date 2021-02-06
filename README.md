@@ -34,6 +34,7 @@ DEFAULT_PORT='<default port (3001)>'
 
 ### API routes:
 *JSON Format*
+
 **/categories**
 
 *GET* - Get all categories and their products with their linked tags.
