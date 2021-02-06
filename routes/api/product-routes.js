@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
       { model: Tag, attributes: ['tag_name', 'id'], through: ProductTag, as: 'product_tags' }
     ]
   })
-  .then(productData => { res.json(productData); })
+  .then(productData => { res.status(200).json(productData); })
   .catch(err => { console.log(err); res.status(500).json(err); });
 });
 
@@ -37,7 +37,11 @@ router.get('/:id', (req, res) => {
       { model: Tag, attributes: ['tag_name', 'id'], through: ProductTag, as: 'product_tags' }
     ]
   })
-  .then(productData => { res.json(productData); })
+  .then(productData =>
+  {
+    if (!productData) { res.status(404).json({ message: 'No product found with that ID' }); return; }
+    res.json(productData);
+  })
   .catch(err => { console.log(err); res.status(500).json(err); });
 });
 
@@ -108,7 +112,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((updatedProductTags) => res.status(200).json(updatedProductTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
@@ -117,9 +121,9 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Product.destroy({ where: { id: req.params.id } })
-  .then(productData =>
+  .then(rowsAffected =>
   {
-    if (!productData) { res.status(404).json({ message: 'No product with this id' }); return; }
+    if (!rowsAffected) { res.status(404).json({ message: 'No product with this id' }); return; }
     res.json(productData)
   })
   .catch(err => { console.log(err); res.status(500).json(err); });

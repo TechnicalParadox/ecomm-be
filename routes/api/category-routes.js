@@ -34,7 +34,11 @@ router.get('/:id', (req, res) => {
       include: [{ model: Tag, attributes: ['tag_name'], through: ProductTags, as: 'product_tags'}]
     }]
   })
-  .then(categoryData => { res.json(categoryData); })
+  .then(categoryData =>
+  {
+    if (!categoryData) { res.status(404).json({ message: 'No category with that ID' }); return; }
+    res.status(200).json(categoryData);
+  })
   .catch(err => { console.log(err); res.status(500).json(err); });
 });
 
@@ -48,14 +52,22 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update(req.body, { where: { id: req.params.id } } )
-  .then(categoryData => { res.status(200).json(categoryData); })
+  .then(rowsAffected =>
+  {
+    if (!rowsAffected) { res.status(404).json({ message: 'No category with that ID or nothing to be updated' }); return; }
+    res.status(200).json(rowsAffected);
+  })
   .catch(err => { console.log(err); res.status(500).json(err); });
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({ where: { id: req.params.id } })
-  .then(categoryData => { res.status(200).json(categoryData); })
+  .then(rowsAffected =>
+  {
+    if (!rowsAffected) { res.status(404).json({ message: 'No category with that ID' }); return; }
+    res.status(200).json(rowsAffected);
+  })
   .catch(err => { console.log(err); res.status(500).json(err); });
 });
 
