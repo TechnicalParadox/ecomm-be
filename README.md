@@ -29,6 +29,9 @@ DEFAULT_PORT='<default port (3001)>'
 5. (Optional) Seed your database by running 'npm run seed'
 6. Run 'npm start' to launch your server
 ## Usage
+### Video:
+[https://youtu.be/MLa-1-Cb63E](https://youtu.be/MLa-1-Cb63E)
+
 ### API routes:
 *JSON Format*
 **/categories**
