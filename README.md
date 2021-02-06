@@ -25,8 +25,7 @@ RESET_DB='<0 for false, 1 to reset database on server start>'
 DEFAULT_PORT='<default port (3001)>'
 ```
 4. Create your database in MySQL with `SOURCE <path-to-installation>/db/schema.sql`
-
-*make sure `<install>/db/schema.sql` uses the correct database name or manually create database in MySQL CLI with DROP/CREATE commands*
+- *make sure `<install>/db/schema.sql` uses the correct database name or manually create database in MySQL CLI with DROP/CREATE commands*
 5. (Optional) Seed your database by running 'npm run seed'
 6. Run 'npm start' to launch your server
 ## Usage
