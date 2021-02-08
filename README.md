@@ -30,7 +30,7 @@ DEFAULT_PORT='<default port (3001)>'
 6. Run 'npm start' to launch your server
 ## Usage
 ### Video:
-[https://youtu.be/MLa-1-Cb63E](https://youtu.be/MLa-1-Cb63E)
+[https://youtu.be/MLa-1-Cb63E](https://youtu.be/HZMvrJo3Oe8)
 
 ### API routes:
 *JSON Format*
